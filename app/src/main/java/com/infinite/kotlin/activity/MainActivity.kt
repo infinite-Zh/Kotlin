@@ -1,28 +1,34 @@
 package com.infinite.kotlin.activity
 
 import android.os.Bundle
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import com.infinite.kotlin.KotlinApp
+import android.view.Window
 import com.infinite.kotlin.R
-import com.infinite.kotlin.bean.Movie
-import com.infinite.kotlin.bean.Result
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
+import com.infinite.kotlin.adapter.MainAdapter
+import com.infinite.kotlin.fragment.BaseFragment
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.toolbar.*
 
 class MainActivity : AppCompatActivity() {
+    var mAdapter: MainAdapter? = null
+    val fragmentList: MutableList<Fragment> = mutableListOf()
+    val titles: MutableList<String> = mutableListOf()
     override fun onCreate(savedInstanceState: Bundle?) {
+        requestWindowFeature(Window.FEATURE_NO_TITLE)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        var cal: Call<Result<MutableList<com.infinite.kotlin.bean.Movie>>> = KotlinApp.apiService()!!.getMoviesInTheater(5)
-        cal.enqueue(object : Callback<Result<MutableList<Movie>>> {
-            override fun onFailure(call: Call<Result<MutableList<Movie>>>?, t: Throwable?) {
-            }
+        text_title.text="Kotlin"
+        setUpViewPage()
+    }
 
-            override fun onResponse(call: Call<Result<MutableList<Movie>>>?, response: Response<Result<MutableList<Movie>>>?) {
-            }
-
-        })
+    fun setUpViewPage() {
+        val baseFrg :BaseFragment = BaseFragment()
+        fragmentList.add(baseFrg)
+        titles.add("正在热播")
+        tablayout.setupWithViewPager(vp)
+        mAdapter = MainAdapter(supportFragmentManager, fragmentList, titles)
+        vp.adapter = mAdapter
     }
 
 }

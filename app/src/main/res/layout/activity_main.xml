@@ -21,7 +21,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <include layout="@layout/toolbar_back" />
+                <include layout="@layout/toolbar" />
 
 
                 <ImageView
@@ -30,21 +30,12 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
-                    android:layout_marginRight="8dp"
-                    android:src="@mipmap/ic_add_task" />
+                    android:layout_marginRight="8dp" />
 
-                <ImageView
-                    android:id="@+id/ic_search"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_alignParentLeft="true"
-                    android:layout_centerVertical="true"
-                    android:layout_marginLeft="8dp"
-                    android:src="@mipmap/ic_search" />
             </RelativeLayout>
 
             <RelativeLayout
-                android:background="@color/color_white"
+                android:background="#FFFFFF"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
@@ -53,7 +44,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     app:tabSelectedTextColor="@color/colorPrimary"
-                    app:tabTextColor="@color/colorBlack"
+                    app:tabTextColor="#000000"
                     app:tabIndicatorColor="@color/colorPrimary"
                     />
             </RelativeLayout>
