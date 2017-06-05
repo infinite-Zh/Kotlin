@@ -51,4 +51,12 @@ open class BaseFragment : Fragment() {
 
         })
     }
+
+    companion object{
+        fun getInstance():BaseFragment{
+            val fragment : BaseFragment= BaseFragment()
+            
+            return fragment
+        }
+    }
 }

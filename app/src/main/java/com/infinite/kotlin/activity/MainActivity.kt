@@ -1,6 +1,7 @@
 package com.infinite.kotlin.activity
 
 import android.os.Bundle
+import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import android.view.Window
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         text_title.text="Kotlin"
+        tablayout.tabMode=TabLayout.MODE_FIXED
         setUpViewPage()
     }
 
