@@ -12,5 +12,8 @@ import retrofit2.http.Query
 interface ApiService{
 
     @GET("v2/movie/in_theaters")
-    fun getMoviesInTheater(@Query ("count") count : Int): Call<Result<MutableList<Movie>>>
+    fun getMoviesInTheater(@Query ("count") count : Int,@Query("start") startIndex:Int): Call<Result<MutableList<Movie>>>
+
+    @GET("v2/movie/coming_soon")
+    fun getMoviesCommingSoon(@Query ("count") count : Int,@Query("start") startIndex:Int): Call<Result<MutableList<Movie>>>
 }
