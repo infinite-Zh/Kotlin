@@ -15,5 +15,5 @@ interface ApiService{
     fun getMoviesInTheater(@Query ("count") count : Int,@Query("start") startIndex:Int): Call<Result<MutableList<Movie>>>
 
     @GET("v2/movie/coming_soon")
-    fun getMoviesCommingSoon(@Query ("count") count : Int,@Query("start") startIndex:Int): Call<Result<MutableList<Movie>>>
+    fun getMoviesComingSoon(@Query ("count") count : Int, @Query("start") startIndex:Int): Call<Result<MutableList<Movie>>>
 }

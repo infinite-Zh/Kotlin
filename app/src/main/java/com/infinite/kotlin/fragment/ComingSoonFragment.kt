@@ -9,9 +9,9 @@ import retrofit2.Call
  * Created by 19082 on 2017/6/6.
  */
 
-class CommingSoonFragment : BaseFragment() {
+class ComingSoonFragment : BaseFragment() {
     override fun getCall(): Call<Result<MutableList<Movie>>> {
-        return KotlinApp.apiService()!!.getMoviesCommingSoon(COUNT,startIndex)
+        return KotlinApp.apiService()!!.getMoviesComingSoon(COUNT,startIndex)
     }
 
 

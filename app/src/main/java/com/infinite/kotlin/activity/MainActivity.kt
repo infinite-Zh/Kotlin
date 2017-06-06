@@ -8,7 +8,7 @@ import android.view.Window
 import com.infinite.kotlin.R
 import com.infinite.kotlin.adapter.MainAdapter
 import com.infinite.kotlin.fragment.BaseFragment
-import com.infinite.kotlin.fragment.CommingSoonFragment
+import com.infinite.kotlin.fragment.ComingSoonFragment
 import com.infinite.kotlin.fragment.InTheaterFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.toolbar.*
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity() {
     fun setUpViewPage() {
         val baseFrg :BaseFragment = InTheaterFragment()
         fragmentList.add(baseFrg)
-        fragmentList.add(CommingSoonFragment())
+        fragmentList.add(ComingSoonFragment())
         titles.add("正在热播")
         titles.add("即将上映")
         tablayout.setupWithViewPager(vp)
